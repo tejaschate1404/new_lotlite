@@ -1,0 +1,252 @@
+{% extends "client/base.html" %}
+
+{% load static %}
+{% block title %}
+<title>Lotlite Technology || about </title>
+ {% endblock %}
+{% block certificateActive %} active {% endblock %}
+{% block style %}
+<style>
+  body{
+            margin:0;
+            padding:0;
+            color:black;
+            text-align:center;
+        }
+
+
+        .banner-heading{
+            font-size:26px; 
+            font-family:sans-serif;
+            font-style: normal;
+          
+        }
+        .banner-bio{
+            font-family:Roboto,sans-serif;
+            font-size:15px;
+            
+           
+        }
+        .banner-bio-part{
+            background: linear-gradient(to right, #e0f00e, #a8e37a);
+          color: transparent; 
+          background-clip: text; 
+          -webkit-background-clip: text; 
+          font-weight: bold; 
+        
+
+        }
+        .banner-btn{
+            background-color:yellow;
+            font-family:Roboto,sans-serif;
+            border-radius:5px;
+           
+        }
+        .banner-btn-heading{
+            text-decoration:none;
+            color:black;
+           
+        }
+       
+        .category-heading{
+            font-size:35px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+           
+        }
+        .category-heading-part {
+          background: linear-gradient(to right, #e0f00e, #a8e37a); /* Gradient from #e0f00e to a lighter shade */
+          color: transparent; /* Make the text transparent to see the gradient */
+          background-clip: text; /* Clip the background to the text */
+          -webkit-background-clip: text; /* For Safari compatibility */
+          font-size: 35px; /* Example font size */
+          
+        }
+        .category-image{
+          background-color:#34ebdb;
+
+        }
+        .technology-heading{
+          font-size:35px;
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          
+
+        }
+        .technolog-name-box{
+          
+          overflow:none;
+          border-radius:10px;
+           
+          box-shadow: 0 -3px 5px rgba(255, 255, 0, 0.5), /* Top shadow */
+            3px 0 6px rgba(255, 255, 0, 0.5),  /* Right shadow */
+            0 5px 7px rgba(255, 255, 0, 0.5),  /* Bottom shadow */
+           -3px 0 5px rgba(255, 255, 0, 0.5); /* Left shadow */
+
+          
+        }
+        .technology-item{
+          text-align:left;
+        }
+        .technology-disc{
+          color:#adb7c7;
+        }
+        .logo-image img{
+          border-radius:3px;
+        }
+        .ribeye-marrow-regular {
+         font-family: "Ribeye Marrow", serif;
+         font-weight: 400;
+         font-style: normal;
+         font-size:35px;
+        }
+        .checked {
+          color: #ffc107; /* Use any color you like for filled stars */
+        }
+        .rating-num{
+           font-size:50px;
+           font-family: "Roboto", sans-serif;
+          
+        }
+        .review-box{
+          
+          overflow:none;
+          border-radius:10px;
+           
+          box-shadow: 
+            0 -1px 2px rgba(255, 255, 255, 0.3), /* Top shadow */
+            1px 0 2px rgba(255, 255, 255, 0.3),  /* Right shadow */
+            0 1px 2px rgba(255, 255, 255, 0.3),  /* Bottom shadow */
+           -1px 0 2px rgba(255, 255, 255, 0.3); /* Left shadow */
+           background-color:white;
+           color:black;
+
+
+          
+        }
+        .review-item{
+          text-align:left;
+        }
+        .review-disc{
+          color:#adb7c7;
+          max-height: 100%; /* Ensures paragraphs don't exceed the height */
+          overflow: hidden; /* Hides overflowing text */
+          margin: 0; /* Remove default margin */
+          transition: max-height 0.5s ease; /* Optional: Add a smooth transition effect */
+        }
+         
+        
+        .review-cmd{
+          color:#adb7c7;
+          max-height: 100px; /* Set your desired height */
+          overflow: hidden; /* Hide both scrollbars */
+          position: relative; /* Establish a positioning context */
+        
+        }
+      
+        .review-cmd::after {
+          content: '';
+          display: block;
+          height: 100%; /* Take full height */
+          width: 100%; /* Take full width */
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          background: linear-gradient(to bottom, transparent 0%, white 100%); /* Gradient to hide overflow */
+          pointer-events: none; /* Ensure clicks go through */        
+}   
+
+.fixed-buttons {
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Distance from bottom */
+            right: 20px; /* Distance from right */
+            z-index: 999; /* Above other content */
+        }
+.logo-text{
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size:25px;
+}
+
+.lower-card{
+    background-color: black;
+}
+.card-title {
+    color:white;
+}
+.card__description{
+    color:white;
+}
+ 
+
+ </style>
+
+{% endblock %}
+{% block content %}
+
+<!-- Jumbotron start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 10px;">
+    <div class="container text-center my-5 py-5">
+        {% comment %} <h1 class="text-white mt-4 mb-4">"Training, Certification & Placement"</h1> {% endcomment %}
+        <h1 class="text-white display-1 mb-1">Certificates</h1>
+        <div class="d-inline-flex text-white mb-3">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Certificates</p>
+            </div>
+
+        <!-- Centered Search Form -->
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <form method="get" class="d-flex" action="{% url 'search_courses' %}">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="form-control border-light me-2 py-4" 
+                    style="padding: 20px;" 
+                    placeholder="Search for courses..."
+                    required>
+                <button type="submit" class="btn btn-secondary px-4 px-lg-5 ">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- Header End -->
+
+
+     <!-- Category Section -->
+
+
+<div class=" container d-flex justify-content-center align-items-center flex-column mt-4">
+        <h1 class="p-2 ">Type Of <span class="" >Certificate</span> We Provide!
+        </h1>
+      <div class="container p-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            {% for service in services %}
+            <div class="col">
+                <!-- Wrapper for the stacked cards -->
+                <div class="card-stack">
+                    <div class="card h-100 upper-card">
+                        <img src=" {{ service.image.url }}" class="card-img-top rounded" alt="...">
+                    </div>
+                    <div class="card h-100 lower-card">
+                        <h5 class="card-title">{{service.title}}</h5>
+                        <div class="card__data">
+                            <span class="card__description">{{service.description}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %}
+        
+        </div>
+    </div>
+        
+</div>
+</div>
+</div>
+
+{% endblock %}

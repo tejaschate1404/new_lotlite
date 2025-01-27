@@ -1,0 +1,96 @@
+{% extends "client/base.html" %}
+
+{% load static %}
+{% block title %}
+<title>Lotlite Technology || Contact </title>
+{% endblock %}
+{% block contactActive %} active {% endblock %}
+{% block content %}
+
+
+    <!-- Header Start -->
+        <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 10px;">
+    <div class="container text-center my-5 py-5">
+       
+        <h1 class="text-white display-1 mb-5">Search</h1>
+
+        <!-- Centered Search Form -->
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <form method="get" class="d-flex" action="{% url 'search_courses' %}">
+                <input 
+                    type="text" 
+                    name="q" 
+                    value="{{ query }}"
+                    class="form-control border-light me-2 py-4" 
+                    style="padding: 20px;" 
+                    placeholder="Search for courses..."
+                    required>
+                <button type="submit" class="btn btn-secondary px-4 px-lg-5 ">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- Header End -->
+
+
+    <!-- Contact Start -->
+ 
+    {% comment %} <h1>Search Courses</h1>
+    <form method="get" action="{% url 'search_courses' %}">
+        <input type="text" name="q" value="{{ query }}" placeholder="Search for courses..." required>
+        <button type="submit">Search</button>
+    </form> {% endcomment %}
+
+
+
+  <!-- Courses Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row mx-0 justify-content-center">
+                <div class="col-lg-8">
+                    
+                </div>
+            </div>
+            <div class="row">
+            
+
+            
+
+            {% if courses %}
+                <h2 class="text-center m-3">Search Results for "{{ query }}"</h2>
+                {% for course in courses %}
+
+                <div class="col-lg-4 col-md-6 pb-4">
+                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'courseDetail' course.id %}">
+                        <img class="img-fluid" style="height:400px" src="{{ course.image.url }}" alt="{{ course.title }}">
+                        <div class="courses-text">
+                            <h4 class="text-center text-white px-3">{{ course.title }}</h4>
+                            <div class="border-top w-100 mt-3">
+                                <div class="d-flex justify-content-between p-4">
+                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Lotlite Technology </span>
+                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
+                                        <small>(250)</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            {% else %}
+                {% if query %}
+                    <h2 class="text-center">No courses found for "{{ query }}".</h2>
+                {% else %}
+                    <h2 class="text-center">Start typing to search for courses.</h2>
+                {% endif %}
+            {% endif %}
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+    <!-- Courses End -->
+  
+{% endblock %}

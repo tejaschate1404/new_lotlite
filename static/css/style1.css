@@ -1,0 +1,345 @@
+
+/*================== NAVBAR Card css ==============*/
+
+/* General body styling */
+body {
+    background-color: #ffffff; /* White background for the rest of the page */
+    color: black; /* Default text color */
+    font-family: Arial, sans-serif;
+}
+
+/* General styling for the navbar */
+.custom-navbar {
+    background-color: rgba(0, 0, 12, 0.8); /* Dark background for navbar */
+    color: white;
+    position: fixed; /* Fixed position for navbar */
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.navbar-brand {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.2rem;
+}
+
+.logo-icon {
+    margin-left: 20px;
+    margin-right: 8px;
+    fill: white;
+}
+
+/* Navbar collapse and link styling */
+.navbar-toggler {
+    border-color: transparent; /* Remove border for toggle */
+}
+
+.navbar-toggler-icon {
+    background-color: white; /* Change to white for better visibility */
+}
+
+.custom-nav-link {
+    color: white;
+    margin-left: 10px;
+    padding: 0 10px;
+    font-size: 1rem;
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.nav-link:hover {
+    color: #f0f0f0; /* Lighter hover color */
+}
+
+/* Background image slider */
+ #carouselExampleIndicators .carousel-item {
+    height: 85vh; /* Slightly larger height for the carousel */
+    min-height: 600px; /* Adjusted minimum height */
+    background-position: center;
+    background-size: cover; /* Cover the area of the item */
+}
+
+#carouselExampleIndicators .carousel-caption {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 5%; /* Adjust distance from the left */
+    transform: translateY(-50%); /* Center vertically */
+    text-align: left; /* Align text to the left */
+    max-width: 40%; /* Control width to prevent it from stretching too far */
+}
+
+/* Optional: Style buttons within caption to remove underline and adjust color */
+#carouselExampleIndicators .carousel-caption .btn a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Adjust text color */
+}
+
+#carouselExampleIndicators .carousel-caption .btn a:hover {
+    color: #f0f0f0; /* Hover color */
+}
+
+/* Set z-index on carousel to place behind navbar */
+#carouselExampleIndicators .carousel {
+    position: relative;
+    z-index: 1; /* Make sure the carousel is behind the navbar */
+}
+
+/* Hide carousel indicators */
+#carouselExampleIndicators .carousel-indicators {
+    display: none; /* This hides the indicators */
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 51, 0.9); /* Darker background on toggle */
+        position: absolute;
+        top: 100%; /* Position below navbar */
+        left: 0;
+        right: 0;
+        z-index: 999; /* Above the rest of the page */
+        padding: 10px 0; /* Add padding to collapse menu */
+    }
+    .navbar-nav {
+        text-align: center; /* Center align items */
+    }
+}
+
+/*================== Category Card css ==============*/
+
+/* Align cards in a stacked format */
+.card-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upper card styling */
+.upper-card {
+    border: none;
+    margin-bottom: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Image styling to ensure equal dimensions */
+.upper-card .card-img-top {
+    width: 100%; /* Full width of the card */
+    height: 350px; /* Set a fixed height */
+    object-fit: cover; /* Ensures image is cropped to fit the area without distortion */
+    border-radius: 5px 5px 0 0; /* Round top corners */
+}
+
+/* Lower card styling without outward scaling */
+.lower-card {
+    margin-top: -20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    text-align: center;
+    padding: 1rem;
+    background-color: #302f2f;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    transition: height 0.3s ease;
+}
+
+/* Hide card__data initially */
+.card__data {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Show card__data when upper card is hovered */
+.card-stack:hover .card__data {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* Inward scaling effect for the upper card */
+.card-stack:hover .upper-card {
+    transform: scale(0.95);
+}
+
+
+/*================== MY CODE css ==============*/
+
+
+body{
+            margin:0;
+            padding:0;
+            
+            background-color:black;
+            color:white;
+            text-align:center;
+        }
+
+
+        .banner-heading{
+            font-size:26px; 
+            font-family:sans-serif;
+            font-style: normal;
+          
+        }
+        .banner-bio{
+            font-family:Roboto,sans-serif;
+            font-size:15px;
+            
+           
+        }
+        .banner-bio-part{
+            background: linear-gradient(to right, #e0f00e, #a8e37a);
+          color: transparent; 
+          background-clip: text; 
+          -webkit-background-clip: text; 
+          font-weight: bold; 
+        
+
+        }
+        .banner-btn{
+            background-color:yellow;
+            font-family:Roboto,sans-serif;
+            border-radius:5px;
+           
+        }
+        .banner-btn-heading{
+            text-decoration:none;
+            color:black;
+           
+        }
+       
+        .category-heading{
+            font-size:35px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+           
+        }
+        .category-heading-part {
+          background: linear-gradient(to right, #e0f00e, #a8e37a); /* Gradient from #e0f00e to a lighter shade */
+          color: transparent; /* Make the text transparent to see the gradient */
+          background-clip: text; /* Clip the background to the text */
+          -webkit-background-clip: text; /* For Safari compatibility */
+          font-size: 35px; /* Example font size */
+          
+        }
+        .category-image{
+          background-color:#34ebdb;
+
+        }
+        .technology-heading{
+          font-size:35px;
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          
+
+        }
+        .technolog-name-box{
+          
+          overflow:none;
+          border-radius:10px;
+           
+          box-shadow: 0 -3px 5px rgba(255, 255, 0, 0.5), /* Top shadow */
+            3px 0 6px rgba(255, 255, 0, 0.5),  /* Right shadow */
+            0 5px 7px rgba(255, 255, 0, 0.5),  /* Bottom shadow */
+           -3px 0 5px rgba(255, 255, 0, 0.5); /* Left shadow */
+
+          
+        }
+        .technology-item{
+          text-align:left;
+        }
+        .technology-disc{
+          color:#adb7c7;
+        }
+        .logo-image img{
+          border-radius:3px;
+        }
+        .ribeye-marrow-regular {
+         font-family: "Ribeye Marrow", serif;
+         font-weight: 400;
+         font-style: normal;
+         font-size:35px;
+        }
+        .checked {
+          color: #ffc107; /* Use any color you like for filled stars */
+        }
+        .rating-num{
+           font-size:50px;
+           font-family: "Roboto", sans-serif;
+          
+        }
+        .review-box{
+          
+          overflow:none;
+          border-radius:10px;
+           
+          box-shadow: 
+            0 -1px 2px rgba(255, 255, 255, 0.3), /* Top shadow */
+            1px 0 2px rgba(255, 255, 255, 0.3),  /* Right shadow */
+            0 1px 2px rgba(255, 255, 255, 0.3),  /* Bottom shadow */
+           -1px 0 2px rgba(255, 255, 255, 0.3); /* Left shadow */
+           background-color:white;
+           color:black;
+
+
+          
+        }
+        .review-item{
+          text-align:left;
+        }
+        .review-disc{
+          color:#adb7c7;
+          max-height: 100%; /* Ensures paragraphs don't exceed the height */
+          overflow: hidden; /* Hides overflowing text */
+          margin: 0; /* Remove default margin */
+          transition: max-height 0.5s ease; /* Optional: Add a smooth transition effect */
+        }
+         
+        
+        .review-cmd{
+          color:#adb7c7;
+          max-height: 100px; /* Set your desired height */
+          overflow: hidden; /* Hide both scrollbars */
+          position: relative; /* Establish a positioning context */
+        
+        }
+      
+        .review-cmd::after {
+          content: '';
+          display: block;
+          height: 100%; /* Take full height */
+          width: 100%; /* Take full width */
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          background: linear-gradient(to bottom, transparent 0%, white 100%); /* Gradient to hide overflow */
+          pointer-events: none; /* Ensure clicks go through */        
+}   
+
+
+/* =============== Fixed button css ============== */ 
+  .fixed-buttons {
+        position: fixed; /* Fixed positioning */
+        bottom: 20px; /* Distance from the bottom */
+        right: 20px; /* Distance from the right */
+        z-index: 999; /* Ensure they are above other content */
+        
+        }
+
+.fixed-buttons .btn {
+    margin-bottom: 10px; /* Space between buttons */
+    }
+
+.model-title-message{
+    font-family: 'Courier New', Courier, monospace;
+}   
+
+
+    
+   

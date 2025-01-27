@@ -1,0 +1,150 @@
+{% extends "admin/baseAdmin.html" %}
+{% comment %} 
+{% block title %}
+Add New Certificate
+{% endblock %}
+
+{% block style %}
+<!-- Include any custom styles if needed -->
+{% endblock %}
+
+{% block content %} 
+
+<div id="layoutSidenav_content">
+    <main>
+        {% if messages %}
+            <div class="alert alert-info m-2 p-2">
+                {% for message in messages %}
+                    <p style="font-size:25px">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+         <div class="container my-5 m-3">
+            <h2 class="mb-4">Add New Certificate</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the certificate title" required>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                </div>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category" required>
+                        <option value="">Select a Category</option>
+                        
+                        {% for category in categoryCirtificate %}
+                        <option value="{{ category.id }}">{{ category.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+              
+
+                <!-- Certificate Image -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Certificate Image</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+        <h3>Debugging Categories:</h3>
+<ul>
+    {% for category in categoryCirtificate %}
+    <li>{{ category.title }}</li>
+    {% endfor %}
+</ul>
+
+    </main>
+</div>
+
+{% endblock %} {% endcomment %}
+
+
+
+
+
+{% comment %} {% extends "admin/baseAdmin.html" %} {% endcomment %}
+
+{% block title %}
+
+{% endblock %}
+{% block certificateActive %} bg-primary {% endblock %}
+{% block style %}
+
+{% endblock %}
+
+{% block content %} 
+
+
+<div id="layoutSidenav_content">
+    <main>
+        {% if messages %}
+            <div class="alert alert-info m-2 p-2">
+                {% for message in messages %}
+                    <p style="font-size:25px">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+         <div class="container my-5 m-3">
+            <h2 class="mb-4">Add New Certificate</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Certificate Category</label>
+                    <select class="form-select" id="category" name="category" required>
+                        <option value="">Select a Category</option>
+                        {% for category in category %}
+                        <option value="{{ category.id }}">{{ category.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+
+                <!-- Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the course title" required>
+                </div>
+
+
+                <!-- Image -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Certificate Image</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </div>
+
+                
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+       
+
+    </main>
+</div>
+{% endblock %}
+

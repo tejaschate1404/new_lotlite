@@ -1,0 +1,233 @@
+{% extends 'client/base.html' %}
+{% load static %}
+{% block title %}
+<title>Lotlite Technology || Student Mobility </title>
+ {% endblock %}
+{% block style %}
+<style>
+            .transition-300:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            }
+            .hover-bounce:hover {
+                animation: bounce 0.5s;
+            }
+            .hover-grow:hover {
+                transform: scale(1.1);
+            }
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+            .card-body {
+                padding: 2rem;
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+
+            .card-body:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .card-body .icon {
+                color: #007bff;
+                margin-bottom: 1.5rem;
+            }
+
+            .card-body h4 {
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+                    
+
+            </style>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Jumbotron start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 10px;">
+    <div class="container text-center my-5 py-5">
+        {% comment %} <h1 class="text-white mt-4 mb-4">"Training, Certification & Placement"</h1> {% endcomment %}
+        <h1 class="text-white display-1 mb-1">StudentMobility</h1>
+        <div class="d-inline-flex text-white mb-3">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">StudentMobility</p>
+            </div>
+
+        <!-- Centered Search Form -->
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <form method="get" class="d-flex" action="{% url 'search_courses' %}">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="form-control border-light me-2 py-4" 
+                    style="padding: 20px;" 
+                    placeholder="Search for courses..."
+                    required>
+                <button type="submit" class="btn btn-secondary px-4 px-lg-5 ">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- Header End -->
+<!-- Page Banner Start -->
+<section class="page-banner-area bgs-cover" style="background-image: url({% static 'img/backgrounds/studentmobilityBack.jpg' %}); height: 400px;">
+    
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Feature Cards -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm transition-300" style="transition: all 0.3s ease;">
+                    <div class="card-body text-center">
+                        <div class="icon mb-3">
+                            <i class="flaticon-trust fs-1 text-primary hover-bounce"></i>
+                        </div>
+                        <h4>Cultural Immersion</h4>
+                        <p>Explore Malaysia's vibrant culture with weekend excursions, local cuisines, and iconic landmarks.</p>
+                        <a href="{% url 'contact' %}" class="btn btn-link text-primary hover-grow">
+                            <i class="far fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm transition-300" style="transition: all 0.3s ease;">
+                    <div class="card-body text-center">
+                        {% comment %} <div class="icon mb-3">
+                            <i class="fas fa-graduation-cap fs-1 text-primary hover-bounce"></i>
+                        </div> {% endcomment %}
+                        <h4>Academic Growth</h4>
+                        <p>Earn international credits while experiencing diverse teaching methods and perspectives.</p>
+                        <a href="{% url 'contact' %}" class="btn btn-link text-primary hover-grow">
+                            <i class="far fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+           <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm transition-300" style="transition: all 0.3s ease;">
+                    <div class="card-body text-center">
+                        <div class="icon mb-3">
+                            <i class="flaticon-certificate fs-1 text-primary hover-bounce"></i>
+                        </div>
+                        <h4>Quality Education</h4>
+                        <p>Study at INTI's world-class facilities with experienced faculty and international standards.</p>
+                        <a href="{% url 'contact' %}" class="btn btn-link text-primary hover-grow">
+                            <i class="far fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm transition-300" style="transition: all 0.3s ease;">
+                    <div class="card-body text-center">
+                        <div class="icon mb-3">
+                            <i class="flaticon-globe fs-1 text-primary hover-bounce"></i>
+                        </div>
+                        <h4>Global <br> Network</h4>
+                        <p>Connect with international students and build a worldwide professional network.</p>
+                        <a href="{% url 'contact' %}" class="btn btn-link text-primary hover-grow">
+                            <i class="far fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+
+            
+        </div>
+    </div>
+</section>
+
+<!-- About INTI Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <img src="{% static 'img/Services/inti.jpeg' %}" class="img-fluid rounded" alt="INTI University">
+            </div>
+            <div class="col-lg-8">
+                <h4 class="text-primary">About INTI International University</h4>
+                <h3>Shaping Global Talent, Affordable Excellence, Dynamic Learning Environment</h3>
+                <!-- Add more content -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h5 class="text-primary">Benefits of</h5>
+            <h2>Student Mobility Programme</h2>
+        </div>
+        <div class="row g-4">
+            <!-- Benefits Cards -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="{% static 'img/Services/malesiya.jpg' %}" class="card-img-top" alt="Explore Malaysia" style="height: 270px;">
+                    <div class="card-body">
+                        <h4>Explore Malaysia's Culture</h4>
+                        <p>Immerse yourself in vibrant traditions and explore iconic landmarks like the Petronas
+              Twin Towers and Melaka’s historical sites.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="{% static 'img/Services/2.jpg' %}" class="card-img-top" alt="Explore Malaysia" style="height: 270px;">
+                    <div class="card-body">
+                        <h4>Practical Learning Experiences</h4>
+                        <p>Gain hands-on skills through project-based learning and apply theoretical knowledge to
+              solve real-world challenges</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="{% static 'img/Services/3.jpg' %}" class="card-img-top" alt="Explore Malaysia Culture" style="height: 270px;">
+                    <div class="card-body">
+                        <h4>Global Networking Opportunities</h4>
+                        <p>with diverse peers Connect, enhance your academic profile, and unlock international
+              career possibilities through this transformative program.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other benefits -->
+        </div>
+    </div>
+</section>
+
+<!-- Footer CTA -->
+<section class=" text-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>We're Ready to Shape Your Global Learning Journey</h2>
+                <ul class="list-unstyled mt-4">
+                    <li><i class="fas fa-check me-2"></i>Immerse in Malaysian culture and traditions</li>
+                    <li><i class="fas fa-check me-2"></i>Gain valuable academic credits</li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a href="{% url 'contact' %}" class="btn btn-light btn-lg">Get Free Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

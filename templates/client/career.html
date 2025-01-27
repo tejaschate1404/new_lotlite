@@ -1,0 +1,89 @@
+{% extends "client/base.html" %}
+
+{% load static %}
+{% block title %}
+<title>Lotlite Technology || career </title>
+ {% endblock %}
+{% block careerActive %} active {% endblock %}
+{% block style %}
+<style>
+
+</style>
+
+{% endblock %}
+{% block content %}
+
+
+ <!-- Header Start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 10px;">
+    <div class="container text-center my-5 py-5">
+        {% comment %} <h1 class="text-white mt-4 mb-4">"Training, Certification & Placement"</h1> {% endcomment %}
+        <h1 class="text-white display-1 mb-1">Career</h1>
+        <div class="d-inline-flex text-white mb-3">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Career</p>
+            </div>
+
+        <!-- Centered Search Form -->
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <form method="get" class="d-flex" action="{% url 'search_courses' %}">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="form-control border-light me-2 py-4" 
+                    style="padding: 20px;" 
+                    placeholder="Search for courses..."
+                    required>
+                <button type="submit" class="btn btn-secondary px-4 px-lg-5 ">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- Header End -->
+
+
+    
+
+     <div class="container my-5">
+        <h2 class="text-center mb-4">All Items</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for item in items %}
+            <div class="col">
+                <div class="card h-100">
+                    <!-- Image Section -->
+                    <img src="{{ item.image.url|default:'https://via.placeholder.com/300x200' }}" 
+                         class="card-img-top img-fluid" 
+                         alt="{{ item.title }}"
+                         style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h5 class="card-title">{{ item.title }}</h5>
+
+                        <!-- Description -->
+                        <p class="card-text">
+                            <strong>Description:</strong> {{ item.description }}
+                        </p>
+
+                        <!-- Location -->
+                        <p class="card-text"><strong>Location:</strong> {{ item.location }}</p>
+
+                        <!-- Category -->
+                        <p class="card-text"><strong>Category:</strong> {{ item.category }}</p>
+                        
+                        <!-- Submit Contact Button -->
+                        <a href="{% url 'contact' %}" class="btn btn-primary">Submit Contact</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+   
+
+
+    
+
+
+{% endblock %}

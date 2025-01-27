@@ -1,0 +1,87 @@
+{% extends "admin/baseAdmin.html" %}
+
+{% block title %}
+    
+{% endblock %}
+{% block servicesActive %} bg-primary {% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container my-5">
+            <h2 class="mb-4">View All Services</h2>
+
+            <!-- Careers Table -->
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Category</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                      
+                        <th>Actions</th> <!-- Add Actions column for delete -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if page_obj.object_list %}
+                        {% for service in page_obj %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ service.category }}</td>
+                            <td>
+                                {% if service.image %}
+                                <img src="{{ service.image.url }}" alt="{{ service.title }}" width="50">
+                                {% else %}
+                                No Image
+                                {% endif %}
+                            </td>
+                            <td>{{ service.title }}</td>
+                            <td>{{ service.description|truncatechars:50 }}</td>
+                            
+                            <td>
+                                <!-- Delete Button -->
+                                <a href="{% url 'deleteServices' service.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this career?');">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="7" class="text-center">No careers available</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </main>
+</div>
+{% endblock %}

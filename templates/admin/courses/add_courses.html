@@ -1,0 +1,88 @@
+{% extends "admin/baseAdmin.html" %}
+{% block title %}
+
+{% endblock %}
+{% block coursesActive %} bg-primary {% endblock %}
+{% block style %}
+
+{% endblock %}
+
+{% block content %} 
+
+
+<div id="layoutSidenav_content">
+    <main>
+        {% if messages %}
+            <div class="alert alert-info m-2 p-2">
+                {% for message in messages %}
+                    <p style="font-size:25px">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+         <div class="container my-5 m-3">
+            <h2 class="mb-4">Add New Course</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category" required>
+                        <option value="">Select a Category</option>
+                        {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Image -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Course Image</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </div>
+
+                <!-- Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the course title" required>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                </div>
+
+                <!-- What You Learn -->
+                <div class="mb-3">
+                    <label for="what_you_learn" class="form-label">What You Learn</label>
+                    <textarea class="form-control" id="what_you_learn" name="what_you_learn" rows="3" required></textarea>
+                </div>
+
+                <!-- Courses Included -->
+                <div class="mb-3">
+                    <label for="courses_included" class="form-label">Courses Included</label>
+                    <textarea class="form-control" id="courses_included" name="courses_included" rows="3" required></textarea>
+                </div>
+
+                <!-- Course Contents -->
+                <div class="mb-3">
+                    <label for="course_contents" class="form-label">Course Contents</label>
+                    <textarea class="form-control" id="course_contents" name="course_contents" rows="3" required></textarea>
+                </div>
+
+                <!-- Detailed Description -->
+                <div class="mb-3">
+                    <label for="detailed_description" class="form-label">Detailed Description</label>
+                    <textarea class="form-control" id="detailed_description" name="detailed_description" rows="4" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+       
+
+    </main>
+</div>
+{% endblock %}

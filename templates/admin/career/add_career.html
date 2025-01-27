@@ -1,0 +1,62 @@
+{% extends "admin/baseAdmin.html" %}
+{% block title %}
+  Add Career
+{% endblock %}
+{% block careerActive %} bg-primary {% endblock %}
+
+{% block style %}
+  <!-- Add any custom styles here -->
+{% endblock %}
+
+{% block content %}
+<div id="layoutSidenav_content">
+    <main>
+        {% if messages %}
+            <div class="alert alert-info m-2 p-2">
+                {% for message in messages %}
+                    <p style="font-size:25px">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="container my-5 m-3">
+            <h2 class="mb-4">Add New Career</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category" placeholder="Enter career category" required>
+                </div>
+
+                <!-- Image -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Career Image</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </div>
+
+                <!-- Name -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Career Name</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter career title" required>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                </div>
+
+                <!-- Location -->
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Enter the location" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </main>
+</div>
+{% endblock %}

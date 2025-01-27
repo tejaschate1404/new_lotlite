@@ -1,0 +1,60 @@
+{% extends "admin/baseAdmin.html" %}
+{% block title %}
+
+{% endblock %}
+{% block servicesActive %} bg-primary {% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %} 
+
+<div id="layoutSidenav_content">
+    <main>
+        {% if messages %}
+            <div class="alert alert-info m-2 p-2">
+                {% for message in messages %}
+                    <p style="font-size:25px">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">Add Category</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="{% url 'addServicesCategory' %}">
+                            {% csrf_token %}
+                            <div class="form-floating mb-3">
+                                <input 
+                                    class="form-control" 
+                                    id="categoryName" 
+                                    name="category_name" 
+                                    type="text" 
+                                    placeholder="Enter category name" 
+                                    required />
+                                <label for="categoryName">Category Name</label>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                <button class="btn btn-primary" type="submit">Add Category</button>
+                                <a class="btn btn-secondary" href="{% url 'indexAdmin' %}">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <!-- Footer -->
+   
+</div>
+
+
+{% endblock %}

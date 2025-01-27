@@ -1,0 +1,375 @@
+{% extends "client/base.html" %}
+
+{% load static %}
+{% block title %}
+<title>Lotlite Technology || about </title>
+ {% endblock %}
+{% block aboutActive %} active {% endblock %}
+{% block style %}
+<style>
+    .about-header {
+    margin-bottom: 90px;
+    background-image: url('{% static 'img/backgounds/banner.jpg' %}');
+    background-size: cover;
+    background-position: center;
+}
+</style>
+
+{% endblock %}
+{% block content %}
+
+
+ <!-- Header Start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 10px;">
+    <div class="container text-center my-5 py-5">
+        {% comment %} <h1 class="text-white mt-4 mb-4">"Training, Certification & Placement"</h1> {% endcomment %}
+        <h1 class="text-white display-1 mb-1">About</h1>
+        <div class="d-inline-flex text-white mb-3">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">About</p>
+            </div>
+
+        <!-- Centered Search Form -->
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <form method="get" class="d-flex" action="{% url 'search_courses' %}">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="form-control border-light me-2 py-4" 
+                    style="padding: 20px;" 
+                    placeholder="Search for courses..."
+                    required>
+                <button type="submit" class="btn btn-secondary px-4 px-lg-5 ">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- Header End -->
+
+   
+
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/directer/hero-one.png' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
+                        <h1 class="display-4">Your Gateway to IT Excellence, Career Advancement, and Unmatched Training Quality</h1>
+                    </div>
+                
+                    <div class="row pt-3 mx-0">
+                        <div class="col-3 px-0">
+                            <div class="bg-success text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">123</h1>
+                                <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-3 px-0">
+                            <div class="bg-primary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-3 px-0">
+                            <div class="bg-secondary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">123</h1>
+                                <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-3 px-0">
+                            <div class="bg-warning text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-12 mb-5 mb-lg-0">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?</h6>
+                        <h1 class="display-4">Why You Should Start Learning with Us?</h1>
+                    </div>
+                    <p class="mb-4 pb-2">Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet.</p>
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-primary mr-4">
+                            <i class="fa fa-2x fa-graduation-cap text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Skilled Instructors</h4>
+                            <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-secondary mr-4">
+                            <i class="fa fa-2x fa-certificate text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>International Certificate</h4>
+                            <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="btn-icon bg-warning mr-4">
+                            <i class="fa fa-2x fa-book-reader text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Online Classes</h4>
+                            <p class="m-0">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Feature Start -->
+
+    <!-- Board Of Directers-->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Directors</h6>
+                <h1 class="display-4">Board of Directors</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Alok_kumar.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Binod Kumar Alok</h5>
+                        <p class="mb-2">Founder & Director, Lotlite Technology and Lotlite Real Estate Pvt Ltd</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Ankur_Kumar.jpg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Ankur Kumar</h5>
+                        <p class="mb-2">CTO at Lotlite Technology and Director at RichNusGeeks, IIT Bombay graduate, expert in Cloud Computing</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Saiyam_kumar.jpg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Saiyam Kumar</h5>
+                        <p class="mb-2">Founder and Director of Lotlite Technology, responsible for leading sales strategies and managing all aspects of the sales team.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% comment %} <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Alok_kumar.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+    <!-- Board Of Directers -->
+
+    <!--Our Expert Advisory Panel-->
+    <div class="container-fluid ">
+        <div class="container">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Expert</h6>
+                <h1 class="display-4">Our Expert Advisory Panel</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Sachin_Sakhare.jpg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Dr.Sachin R. Sakhare</h5>
+                        <p class="mb-2">Professor and Head of the Computer Engineering Department at Vishwakarma Institute of Information Technology, Pune, India. He has 29 Years of experience.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Mohd_Shafi.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Mohd Shafi Pathan</h5>
+                        <p class="mb-2">Professor and Cyber Security & Forensics Specialist at MIT ADT University, Pune, with 24 years of experience.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Gurunath_Waghale.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Gurunath Waghale</h5>
+                        <p class="mb-2">Assistant Professor at MIT ADT University with 8+ years of experience, gold medalist in Economics, and multiple advanced degrees.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Prashant_Dhotre.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Prashant Dhotre</h5>
+                        <p class="mb-2">PhD from Aalborg University, Professor and HoD of CSE at MIT ADT University, ISO 27001 Lead Auditor, and author.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Dr. Rajendra G. Pawar.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Dr. Rajendra G. Pawar</h5>
+                        <p class="mb-2">PhD in Data Science specializing in Machine Learning and Deep Learning; researcher at MIT WPU University with Python expertise.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Suresh_Kapare.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Suresh Kapare</h5>
+                        <p class="mb-2">Associate Professor at MIT ADT University with 12 years of experience in Agile Software Development, Scrum, and project management.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/Nagesh.jpeg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Nagesh Jadhav</h5>
+                        <p class="mb-2">PhD in AI (Affective Computing) and MEng in IT, with 18+ years in AI, Machine Learning, and project management.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/mohit.jpg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Mohit Sharma</h5>
+                        <p class="mb-2">Five years in IT, managing ERP projects and staffing operations, focusing on business development and client relationships.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>    
+                
+               
+            </div>
+        </div>
+    </div>
+    <!-- Board Of Directers -->
+
+    <!-- Board Of Directers-->
+    {% comment %} <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Directors</h6>
+                <h1 class="display-4">Sourcing Manager</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{% static 'img/directer/mohit.jpg' %}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Mohit Sharma</h5>
+                        <p class="mb-2">Five years in IT, managing ERP projects and staffing operations, focusing on business development and client relationships.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <!-- Board Of Directers --> {% endcomment %}
+
+
+    
+
+
+{% endblock %}

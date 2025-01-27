@@ -1,0 +1,87 @@
+{% extends "admin/baseAdmin.html" %}
+
+{% block title %}
+    
+{% endblock %}
+{% block certificateActive %} bg-primary {% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container my-5">
+            <h2 class="mb-4">View All Certificates</h2>
+
+            <!-- Careers Table -->
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Category</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Created At</th>
+                        <th>Actions</th> <!-- Add Actions column for delete -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if page_obj.object_list %}
+                        {% for certificate in page_obj %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ certificate.category }}</td>
+                            <td>
+                                {% if certificate.image %}
+                                <img src="{{ certificate.image.url }}" alt="{{ certificate.title }}" width="50">
+                                {% else %}
+                                No Image
+                                {% endif %}
+                            </td>
+                            <td>{{ certificate.title }}</td>
+                            <td>{{ certificate.description|truncatechars:50 }}</td>
+                            <td>{{ certificate.created_at|date:"M d, Y H:i" }}</td>
+                            <td>
+                                <!-- Delete Button -->
+                                <a href="{% url 'deleteCirtificate' certificate.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this career?');">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="7" class="text-center">No careers available</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </main>
+</div>
+{% endblock %}
