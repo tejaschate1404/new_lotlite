@@ -51,6 +51,12 @@ urlpatterns = [
     path('login/',views.login_view , name="loginAdmin"),
     path('logout/',views.logout_view , name="logoutAdmin"),
 
+    #exan
+    path('add-questions/', views.add_questions, name='addQuestions'),
+    path('show-questions/', views.show_questions, name='showQuestions'),
+    path('show-result/', views.show_result, name='showResult'),
+    path('delete-mcq/<int:question_id>/', views.delete_mcq, name='delete_mcq'),
+
 
 
 ]

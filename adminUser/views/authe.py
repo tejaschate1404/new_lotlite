@@ -6,8 +6,6 @@ from django.contrib import messages
 
 
 # Signup View
-
-@login_required
 def signup_view(request):
     if request.method == "POST":
         username = request.POST.get("username")

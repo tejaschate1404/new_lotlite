@@ -7,4 +7,5 @@ from .test import *
 from .authe import *
 from .dashboard import *
 from .services import *
+from .exam import * 
 

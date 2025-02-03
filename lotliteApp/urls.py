@@ -29,7 +29,13 @@ urlpatterns = [
     path("search/",views.search_courses ,name="search_courses"),
 
     #studentMobitliy
-    path('studentMobility/', views.studentMobility, name="studentMobility")
+    path('studentMobility/', views.studentMobility, name="studentMobility"),
+
+    #exam
+    path('student-info/', views.student_info, name="student_info"),
+    path('exam/', views.exam, name='exam'),
+    path('result/', views.result, name='result'),
+    
 ]
 
 

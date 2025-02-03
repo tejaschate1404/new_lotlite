@@ -1,0 +1,65 @@
+{% extends 'client/base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center my-5">
+    <div class="certificate border p-5 shadow-lg text-center bg-white" 
+         style="max-width: 800px; border-radius: 15px; border: 10px solid #FFD700;">
+
+        <!-- Certificate Title -->
+        <h2 class="fw-bold text-uppercase" style="color: #333; font-family: 'Poppins', sans-serif;">
+            Thanks to Participating 
+        </h2>
+        <p class="lead text-muted">in lotlite technology screening round </p>
+
+        <!-- Student Name -->
+        <h1 class="fw-bold" style="font-family: 'Cursive', sans-serif; color: #2c3e50;">
+            {{ student_name }}
+        </h1>
+
+        <p class="lead text-muted">you have successfully completed the</p>
+        
+        <!-- Exam Title -->
+        <h3 class="fw-bold" style="color: #0d6efd;">Online Examination</h3>
+
+        <p class="mt-3">Scoring <strong>{{ score }}/{{ total_questions }}</strong> with a percentage of <strong>{{ percentage }}%</strong></p>
+
+        <!-- Dynamic Badge -->
+        <h4 class="fw-bold mt-4" style="color: {% if percentage >= 80 %}green{% elif percentage >= 50 %}orange{% else %}red{% endif %};">
+            {% if percentage >= 90 %}
+                🌟 Excellent Performance! 🌟
+            {% elif percentage >= 80 %}
+                🎉 Well Done! 🎉
+            {% elif percentage >= 60 %}
+                👍 Good Effort! 👍
+            {% elif percentage >= 50 %}
+                ✔️ Passed! ✔️
+            {% else %}
+                ❌ Keep Trying! ❌
+            {% endif %}
+        </h4>
+
+        <!-- Score Box -->
+        <div class="d-flex justify-content-center mt-4">
+            <div class="text-center px-4 py-3 border rounded shadow-lg" 
+                 style="border: 3px solid #333; background-color: #f8f9fa;">
+                <h5 class="text-dark mb-0">Final Score</h5>
+                <h3 class="fw-bold text-primary mb-0">{{ score }} / {{ total_questions }}</h3>
+                <h6 class="text-muted">{{ percentage }}%</h6>
+            </div>
+        </div>
+
+        <!-- Thank You Note -->
+        <div class="mt-5">
+            <p class="fw-bold text-muted">A lot of thanks from <span style="color: #0d6efd;">Lotlite Technology</span>!</p>
+            <p class="text-muted">For more information, visit: 
+                <a href="https://lotlitetechnology.com" target="_blank" class="fw-bold text-decoration-none">
+                    www.lotlitetechnology.com
+                </a>
+            </p>
+        </div>
+
+        <!-- Download Button -->
+        
+    </div>
+</div>
+{% endblock %}

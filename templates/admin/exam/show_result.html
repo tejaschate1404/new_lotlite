@@ -1,0 +1,79 @@
+{% extends "admin/baseAdmin.html" %}
+
+{% block title %}
+    View Exam Results
+{% endblock %}
+{% block examActive %} bg-primary {% endblock %}
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container my-5">
+            <h2 class="mb-4">View Exam Results</h2>
+
+            <!-- Exam Results Table -->
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Student Name</th>
+                        <th>Roll No</th>
+                        <th>Mobile Number</th>
+                        <th>Score</th>
+                        <th>Total Questions</th>
+                        <th>Percentage</th>
+                        <th>Exam Date</th>
+                        <th>College Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if page_obj.object_list %}
+                        {% for result in page_obj %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ result.student.student_name }}</td>
+                            <td>{{ result.student.roll_no }}</td>
+                            <td>{{ result.student.student_phone }}</td>  <!-- Mobile Number -->
+                            <td>{{ result.score }}</td>
+                            <td>{{ result.total_questions }}</td>
+                            <td>{{ result.percentage }}%</td>
+                            <td>{{ result.exam_date|date:"M d, Y H:i" }}</td>
+                            <td>{{ result.college_name }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="9" class="text-center">No exam results available</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -7,3 +7,4 @@ from .career import *
 from .search import *
 from .services import *
 from .certificate import *
+from .exam import *

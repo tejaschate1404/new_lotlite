@@ -126,6 +126,8 @@
                             </nav>
                         </div>
 
+
+
                      <a class="nav-link collapsed {% block contactActive %} {% endblock %}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseAboutUs">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                         Contact Us
@@ -136,6 +138,22 @@
                             <a class="nav-link" href="{% url 'ContactusView' %}">Contact View</a>
                         </nav>
                     </div>
+
+
+
+                    <a class="nav-link collapsed {% block examActive %} {% endblock %}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseExam" aria-expanded="false" aria-controls="collapseExam">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                        Exam
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseExam" aria-labelledby="headingExam" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="{% url 'showResult' %}">View Result</a>
+                            <a class="nav-link" href="{% url 'addQuestions' %}">Add Questions</a>
+                            <a class="nav-link" href="{% url 'showQuestions' %}">View Questions</a>
+                        </nav>
+                    </div>
+
 
 
                         

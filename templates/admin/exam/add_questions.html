@@ -1,0 +1,134 @@
+{% extends "admin/baseAdmin.html" %}
+{% block title %}
+    Add New MCQ Question
+{% endblock %}
+
+{% block examActive %} bg-primary {% endblock %}
+
+{% block style %}
+    <style>
+        .container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .form-select {
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border-color: #bee5eb;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: #343a40;
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container my-5 m-3">
+            <div class="section-title">
+                <h2 class="mb-4">Add New MCQ Question</h2>
+                
+            </div>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <!-- Question Text -->
+                <div class="mb-3">
+                    <label for="question_text" class="form-label">Question Text</label>
+                    <input type="text" class="form-control" id="question_text" name="question_text" placeholder="Enter the question" required>
+                </div>
+
+                <!-- Option 1 -->
+                <div class="mb-3">
+                    <label for="option_1" class="form-label">Option 1</label>
+                    <input type="text" class="form-control" id="option_1" name="option_1" placeholder="Enter option 1" required>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="mb-3">
+                    <label for="option_2" class="form-label">Option 2</label>
+                    <input type="text" class="form-control" id="option_2" name="option_2" placeholder="Enter option 2" required>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="mb-3">
+                    <label for="option_3" class="form-label">Option 3</label>
+                    <input type="text" class="form-control" id="option_3" name="option_3" placeholder="Enter option 3" required>
+                </div>
+
+                <!-- Option 4 -->
+                <div class="mb-3">
+                    <label for="option_4" class="form-label">Option 4</label>
+                    <input type="text" class="form-control" id="option_4" name="option_4" placeholder="Enter option 4" required>
+                </div>
+
+                <!-- Correct Option -->
+                <div class="mb-3">
+                    <label for="correct_option" class="form-label">Correct Option</label>
+                    <select class="form-select" id="correct_option" name="correct_option" required>
+                        <option value="">Select the correct option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-lg">Submit Question</button>
+            </form>
+        </div>
+    </main>
+</div>
+
+{% endblock %}
